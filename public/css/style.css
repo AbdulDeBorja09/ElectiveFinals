@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    box-sizing: border-box;
+}
+.navbar {
+    padding: 0px 100px;
+}
+.navbar2 {
+    width: 100%;
+    padding: 0px 50px;
+}
+.navbar-brand span {
+    font-weight: 500;
+    margin-left: 15px;
+}
+.navbrand {
+    width: 70px;
+}
+.navbar-container {
+    width: 100%;
+}
+.nav-link {
+    font-size: 20px;
+}
+
+.loginbody {
+    background-image: url("/image/dormitel.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container .login-box {
+    background: #dfdfdf;
+    opacity: 90%;
+    width: 500px;
+    height: 500px;
+    border-radius: 50px;
+}
+
+.login-container .inspire-logo {
+    width: 100px;
+    height: 100px;
+    margin: 20px 20px 0px 20px;
+}
+
+.login-container .login-welc {
+    margin-left: 50px;
+    font-size: 30px;
+    margin-bottom: 0;
+}
+
+.login-container .state1 {
+    margin-left: 58px;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+.login-container .login-box .form-element {
+    margin: 15px 80px;
+}
+
+.login-container .login-box .form-element label {
+    font-size: 15px;
+}
+
+.login-container .login-box .form-element input[type="text"],
+.login-container .login-box .form-element input[type="password"] {
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.login-container .login-box .form-element button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background: #697183;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.login-container .login-box .form-element a {
+    display: block;
+    text-align: center;
+    color: black;
+    text-decoration: underline;
+    font-style: bold;
+    font-size: 15px;
+}
+
+.homepage .container1 {
+    background: #ffffff;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 100%;
+}
+.homepage .profile-icon {
+    background: url("/image/profile_icon.png") 50% / cover no-repeat;
+    margin: 58px 30px 84px 0;
+    width: 75px;
+    height: 75px;
+}
+.homepage .profile {
+    margin-bottom: 10px;
+    display: inline-block;
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 40px;
+    color: #ffffff;
+}
+.homepage .profile-info {
+    overflow-wrap: break-word;
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 24px;
+    color: #ffffff;
+}
+.homepage .container-4 {
+    margin-top: 72px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+.homepage .container-6 {
+    background: #697183;
+    position: relative;
+    margin-right: 91px;
+    display: flex;
+    flex-direction: row;
+    padding: 25px 0 76px 48px;
+    width: 578px;
+    box-sizing: border-box;
+}
+.homepage .bills-icon {
+    background: url("/image/bills_icon.png") 50% / cover no-repeat;
+    margin: 58px 44px 96px 0;
+    width: 80px;
+    height: 80px;
+}
+.homepage .bills {
+    margin-bottom: 10px;
+    display: inline-block;
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 40px;
+    color: #ffffff;
+}
+.homepage .bills-info {
+    overflow-wrap: break-word;
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 24px;
+    color: #ffffff;
+}
+.homepage .container-5 {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+.homepage .container-2 {
+    background: #697183;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 25px 40.8px 59px 53px;
+    box-sizing: border-box;
+}
+.homepage .container-3 {
+    position: relative;
+    margin-bottom: 129px;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    box-sizing: border-box;
+}
+.homepage .transact-icon {
+    background: url("/image/transact_icon.png") 50% / cover no-repeat;
+    margin: 58px 29px 45px 0;
+    width: 90px;
+    height: 90px;
+}
+.homepage .transactions {
+    margin-bottom: 15px;
+    display: inline-block;
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 40px;
+    color: #ffffff;
+}
+.homepage .transact-info {
+    overflow-wrap: break-word;
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 24px;
+    color: #ffffff;
+}
+.homepage .container-1 {
+    margin-top: 72px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+.homepage .container-7 {
+    background: #697183;
+    position: relative;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: row;
+    padding: 25px 0 100px 41px;
+    width: 578px;
+    box-sizing: border-box;
+}
+.homepage {
+    backdrop-filter: blur(2px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 0px 100px 0px;
+    width: 100%;
+    box-sizing: border-box;
+}
