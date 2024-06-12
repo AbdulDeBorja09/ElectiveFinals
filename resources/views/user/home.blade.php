@@ -4,7 +4,7 @@
         <div class="container1">
         </div>
         <div class="container-3">
-            <div class="container-6">
+            <a class="container-6" href="{{ url('/profile') }}">
                 <div class="profile-icon">
                 </div>
                 <div class="container-4">
@@ -17,8 +17,8 @@
                         and address.
                     </span>
                 </div>
-            </div>
-            <div class="container-2">
+            </a>
+            <a class="container-2" href="{{ url('/bill') }}">
                 <div class="bills-icon">
                 </div>
                 <div class="container-5">
@@ -32,9 +32,9 @@
                         internet bill.
                     </span>
                 </div>
-            </div>
+            </a>
         </div>
-        <div class="container-7">
+        <a class="container-7" href="{{ url('/transaction') }}">
             <div class="transact-icon">
             </div>
             <div class="container-1">
@@ -46,6 +46,6 @@
                     payment information.
                 </span>
             </div>
-        </div>
+        </a>
     </div>
 @endsection

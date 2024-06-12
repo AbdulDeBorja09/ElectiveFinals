@@ -103,6 +103,10 @@
     font-style: bold;
     font-size: 15px;
 }
+.homepage a {
+    text-decoration: none;
+    cursor: pointer;
+}
 
 .homepage .container1 {
     background: #ffffff;
@@ -242,6 +246,861 @@
     flex-direction: column;
     align-items: center;
     padding: 100px 0px 100px 0px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.admin-homepage .container {
+    background: #ffffff;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 100%;
+}
+.admin-homepage .tenants-icon {
+    background: url("/image/profile_icon.png") 50% / cover no-repeat;
+    margin: 58px 30px 84px 0;
+    width: 75px;
+    height: 75px;
+}
+.admin-homepage .tenants {
+    margin-bottom: 10px;
+    display: inline-block;
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 40px;
+    color: #ffffff;
+}
+.admin-homepage .tenants-info {
+    overflow-wrap: break-word;
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 24px;
+    color: #ffffff;
+}
+.admin-homepage .container-4 {
+    margin-top: 72px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+.admin-homepage .container-6 {
+    background: #697183;
+    position: relative;
+    margin-right: 91px;
+    display: flex;
+    flex-direction: row;
+    padding: 25px 0 76px 48px;
+    width: 578px;
+    box-sizing: border-box;
+}
+.admin-homepage .bills-icon {
+    background: url("/image/bills_icon.png") 50% / cover no-repeat;
+    margin: 58px 44px 96px 0;
+    width: 80px;
+    height: 80px;
+}
+.admin-homepage .bills {
+    margin-bottom: 10px;
+    display: inline-block;
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 40px;
+    color: #ffffff;
+}
+.admin-homepage .bills-info {
+    overflow-wrap: break-word;
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 24px;
+    color: #ffffff;
+}
+.admin-homepage .container-5 {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+.admin-homepage .container-2 {
+    background: #697183;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 25px 40.8px 59px 53px;
+    box-sizing: border-box;
+}
+.admin-homepage .container-3 {
+    position: relative;
+    margin-bottom: 129px;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    box-sizing: border-box;
+}
+.admin-homepage .payment-icon {
+    background: url("/image/transact_icon.png") 50% / cover no-repeat;
+    margin: 58px 29px 45px 0;
+    width: 90px;
+    height: 90px;
+}
+.admin-homepage .payment {
+    margin-bottom: 15px;
+    display: inline-block;
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 40px;
+    color: #ffffff;
+}
+.admin-homepage .payment-info {
+    overflow-wrap: break-word;
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 24px;
+    color: #ffffff;
+}
+.admin-homepage .container-1 {
+    margin-top: 72px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+.admin-homepage .container-7 {
+    background: #697183;
+    position: relative;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: row;
+    padding: 25px 0 100px 41px;
+    width: 578px;
+    box-sizing: border-box;
+}
+.admin-homepage {
+    backdrop-filter: blur(2px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 0 154px 0;
+    width: 100%;
+    background-color: white;
+    box-sizing: border-box;
+}
+.admin-homepage a {
+    text-decoration: none;
+    cursor: pointer;
+}
+.tenants-add-div {
+    padding: 50px;
+}
+.tenants-add-div h2 {
+    color: #697183;
+    font-weight: 600;
+    font-size: 45px;
+}
+
+.tenants-add-div .form-row {
+    margin-top: 50px;
+    text-transform: uppercase;
+}
+.tenants-add-div .form-row .col-lg-6 {
+    margin-bottom: 10px;
+}
+.tenants-add-div .form-row input {
+    background-color: #d4d4d4;
+    color: black;
+    text-align: center;
+}
+.tenants-add-div .form-row button {
+    width: 350px;
+    padding: 5px;
+    background-color: #697183;
+    border: 0;
+    color: white;
+    border-radius: 7px;
+    margin-top: 40px;
+}
+
+.bills-page .dormitel-1 {
+    background: #ffffff;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 100%;
+}
+.bills-page .bills {
+    position: relative;
+    margin-bottom: 46px;
+    display: inline-block;
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 96px;
+    color: #697183;
+}
+.bills-page .rectangle-39 img {
+    margin: 0 103px 7px 0;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.bills-page .dela-cruz {
+    margin-top: 11px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 40px;
+    width: fit-content;
+    color: #000000;
+}
+.bills-page .container-7 {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+.bills-page .add-bill {
+    font-weight: 600;
+    font-size: 32px;
+    color: #000000;
+    background: #d9d9d9;
+    border-radius: 10px;
+    padding: 15px 27.8px 9px 26px;
+    text-decoration: none;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.bills-page .btn-container {
+    margin-top: 70px;
+}
+
+.bills-page .container-10 {
+    border-radius: 20px;
+    background: #697183;
+    position: relative;
+    margin-bottom: 23px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 19px 116px 18px 72px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.bills-page {
+    backdrop-filter: blur(2px);
+    background: #9d0505;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 50px 104px 67px 151px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.payment-page .dormitel-1 {
+    background: #ffffff;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 100%;
+}
+.payment-page .payments {
+    position: relative;
+    margin-bottom: 46px;
+    display: inline-block;
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 96px;
+    color: #697183;
+}
+.payment-page .rectangle-39 {
+    margin: 0 103px 7px 0;
+}
+.payment-page .rectangle-39 img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.payment-page .dela-cruz {
+    margin-top: 11px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 40px;
+    color: #000000;
+}
+.payment-page .container-7 {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+.payment-page .view-payment {
+    overflow-wrap: break-word;
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 32px;
+    color: #000000;
+}
+.payment-page .add-bill {
+    font-weight: 600;
+    font-size: 32px;
+    color: #000000;
+    background: #d9d9d9;
+    border-radius: 10px;
+    padding: 15px 27.8px 9px 26px;
+    text-decoration: none;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.payment-page .containers {
+    margin-top: 70px;
+}
+.payment-page .container-10 {
+    border-radius: 20px;
+    background: #697183;
+    position: relative;
+    margin-bottom: 23px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 19px 116px 18px 72px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.payment-page {
+    backdrop-filter: blur(2px);
+    background: #9d0505;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 50px 104px 67px 151px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.section1 {
+    display: flex;
+}
+
+.profile-img img {
+    width: 300px;
+    height: 300px;
+    margin: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-info .profile-name {
+    font-weight: bold;
+    font-size: 64px;
+    display: flex;
+    margin-top: 100px;
+}
+
+.profile-info .unit-number,
+.profile-info .email {
+    font-size: 40px;
+    margin-top: 10px;
+}
+
+.section2 {
+    hr {
+        width: 100%;
+        height: 10px;
+        background-color: black;
+    }
+}
+
+.profile-basicinfo .basicinfo-title {
+    font-size: 64px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-left: 55px;
+}
+
+.profile-basicinfo .infodetails {
+    font-size: 40px;
+    font-weight: 600;
+    margin-left: 150px;
+    margin-top: 20px;
+    line-height: 2;
+}
+
+.profile-basicinfo .fullname,
+.profile-basicinfo .age,
+.profile-basicinfo .email,
+.profile-basicinfo .floornumber,
+.profile-basicinfo .unitnumber {
+    display: flex;
+}
+
+.profile-basicinfo .box1 {
+    width: 600px;
+    height: 65px;
+    margin-top: 5px;
+    margin-left: 250px;
+    border-radius: 10px;
+    background-color: #d4d4d4;
+    text-align: center;
+}
+
+.profile-basicinfo .box2 {
+    width: 600px;
+    height: 65px;
+    margin-top: 5px;
+    margin-left: 395px;
+    border-radius: 10px;
+    background-color: #d4d4d4;
+    text-align: center;
+}
+
+.profile-basicinfo .box3 {
+    width: 600px;
+    height: 65px;
+    margin-top: 5px;
+    margin-left: 354.5px;
+    border-radius: 10px;
+    background-color: #d4d4d4;
+    text-align: center;
+}
+
+.profile-basicinfo .box4 {
+    width: 600px;
+    height: 65px;
+    margin-top: 5px;
+    margin-left: 163px;
+    border-radius: 10px;
+    background-color: #d4d4d4;
+    text-align: center;
+}
+
+.profile-basicinfo .box5 {
+    width: 600px;
+    height: 65px;
+    margin-top: 5px;
+    margin-left: 200px;
+    border-radius: 10px;
+    background-color: #d4d4d4;
+    text-align: center;
+}
+
+.section1-transact {
+    display: flex;
+    justify-content: space-between;
+}
+
+.transacttitle .transactions {
+    margin-top: 80px;
+    font-size: 50px;
+    font-weight: 600;
+    color: #697183;
+    margin-left: 100px;
+}
+
+.inspire-logo-transact img {
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+    margin-right: 80px;
+}
+
+.section2-transact {
+    hr {
+        width: 100%;
+        height: 3px;
+        background-color: #000;
+    }
+}
+
+.titles-transact {
+    display: flex;
+    font-size: 30px;
+    font-weight: 600;
+    color: #697183;
+}
+
+.titles-transact .rn {
+    margin-left: 240px;
+}
+.titles-transact .amount {
+    margin-left: 260px;
+}
+
+.flexbox-transact {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+
+.flexbox-transact .rn-details-transact,
+.flexbox-transact .rn-amount-transact {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 2;
+}
+
+.buttons-transact {
+    width: 50px;
+    font-size: 20px;
+}
+
+.buttons-transact .btn1,
+.buttons-transact .btn2,
+.buttons-transact .btn3,
+.buttons-transact .btn4,
+.buttons-transact .btn5 {
+    font-size: 30px;
+    border: none;
+    line-height: 2;
+    cursor: pointer;
+    background-color: white;
+    font-weight: bold;
+    color: #000000;
+    text-decoration: underline;
+}
+.section1-bills {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bills-upperleft .billsdue-title {
+    font-size: 75px;
+    font-weight: 600;
+    color: #697183;
+    margin-top: 20px;
+    margin-left: 100px;
+}
+
+.bills-upperleft .bills-address {
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: 105px;
+}
+
+.inspire-logo-bills img {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    margin-right: 80px;
+}
+
+.section2-bills {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.leftside .billto {
+    font-size: 30px;
+    font-weight: 600;
+    color: #697183;
+}
+
+.leftside .details-bills {
+    font-size: 20px;
+}
+
+.middleside .receiptno,
+.middleside .receiptdate,
+.middleside .duedate {
+    font-size: 25px;
+    font-weight: 600;
+    color: #697183;
+
+    line-height: 1.5;
+}
+
+.rightside .rd-details,
+.rightside .rn-details,
+.rightside .dd-details {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.section3-bills {
+    hr {
+        width: 100%;
+        height: 3px;
+        background-color: #000;
+    }
+}
+
+.flexbox-bills {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 30px;
+    font-weight: 600;
+    color: #697183;
+}
+
+.title1-bills .billstitle {
+    margin-right: 130px;
+}
+
+.flexbox2-bills {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    line-height: 1.5;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.amountbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.flexbox3-bills .total {
+    font-size: 48px;
+    font-weight: bold;
+    color: #697183;
+}
+
+.flexbox3-bills .a5 {
+    font-size: 48px;
+    margin-left: 20px;
+}
+
+.print {
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    margin-left: 120px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #d9d9d9;
+    color: #697183;
+    cursor: pointer;
+}
+
+.profile-div {
+    border-bottom: 2px solid rgb(0, 0, 0);
+    padding-bottom: 30px;
+    margin-top: 50px;
+}
+.profile-div img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(49, 49, 49, 0.137);
+}
+.profile-div .biography {
+    margin-left: 100px;
+    margin-top: 40px;
+    text-align: start;
+    width: fit-content;
+}
+.profile-div .biography h1 {
+    font-weight: 700;
+    font-size: 50px;
+}
+.profile-div .biography h2 {
+    font-size: 23px;
+}
+.profile-div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+.add-bills {
+    margin: 0px 150px;
+}
+
+.bills-add-div h4 {
+    font-size: 25px;
+    font-weight: 500;
+    color: #697183;
+}
+.add-bills input,
+.add-bills select,
+.add-bills .receipt-id {
+    background-color: #d9d9d9;
+    margin-bottom: 7px;
+}
+.bills-add-div .submit button {
+    background-color: #979696;
+    color: black;
+    width: 100%;
+    font-weight: 600;
+}
+.bills-add-div .status-btn {
+    margin-top: 10px;
+}
+.bills-add-div .status-btn button {
+    background-color: #979696;
+    color: black;
+    width: 100%;
+}
+.tenant-page .dormitel-1 {
+    background: #ffffff;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 100%;
+}
+.tenant-page .tenants {
+    position: relative;
+    margin-bottom: 46px;
+    display: inline-block;
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 96px;
+    color: #697183;
+}
+.tenant-page .rectangle-39 img {
+    margin: 0 103px 7px 0;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.tenant-page .dela-cruz {
+    margin: 11px 0 0 -35px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 40px;
+    color: #000000;
+}
+.tenant-page .container-6 {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+.tenant-page .edit {
+    margin-right: 35.5px;
+    margin-left: 30px;
+    overflow-wrap: break-word;
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 32px;
+    color: #000000;
+}
+.tenant-page .container-2 {
+    border-radius: 10px;
+    background: #d9d9d9;
+    position: relative;
+    margin-right: 58px;
+    display: flex;
+    flex-direction: row;
+    padding: 12px 0;
+    width: 200px;
+    box-sizing: border-box;
+    border: 0px;
+    margin-right: -10px;
+}
+.tenant-page .delete {
+    margin-right: 9.3px;
+    overflow-wrap: break-word;
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 32px;
+    color: #000000;
+}
+
+.tenant-page .container-3 {
+    border-radius: 10px;
+    background: #d9d9d9;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 12px 0 12px 17px;
+    width: 200px;
+    box-sizing: border-box;
+    border: 0px;
+    margin-left: 35px;
+}
+.tenant-page .container-8 {
+    margin: 18px 0 26px 0;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+.tenant-page .container-8 .btn {
+    font-weight: 600;
+    font-size: 25px;
+    color: #000000;
+    background: #d9d9d9;
+    border-radius: 10px;
+    border: 0;
+    text-decoration: none;
+    width: 200px;
+    height: 50%;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+.tenant-page .containers {
+    border-radius: 20px;
+    background: #697183;
+    position: relative;
+    margin-bottom: 54px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 19px 46px 18px 72px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.tenant-page .add-tenant {
+    overflow-wrap: break-word;
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 32px;
+    color: #000000;
+    margin-left: 15px;
+}
+.tenant-page .container-4 {
+    border-radius: 20px;
+    background: #697183;
+    position: relative;
+    margin-right: 48px;
+    display: flex;
+    align-self: center;
+    padding: 24px 0 25px 0.7px;
+    width: 250px;
+    box-sizing: border-box;
+    border: 0px;
+}
+.tenant-page {
+    backdrop-filter: blur(2px);
+    background: #9d0505;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 50px 104px 67px 151px;
     width: 100%;
     box-sizing: border-box;
 }
