@@ -41,7 +41,7 @@ class AdminController extends Controller
         $tenant = Tenant::where('user_id', $request->user_id)->first();
         Storage::disk('public')->delete($tenant->image);
 
-        $imagePath = Storage::disk('s3')->put('images', $request->file('image'));
+        $imagePath = Storage::disk('s3')->put('images', $request->image);
         Tenant::where('user_id', $request->user_id)->update([
                 'name' => $request->name,
                 'age' => $request->age,
@@ -75,8 +75,9 @@ class AdminController extends Controller
             'since' => 'required|date',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-        $imagePath = $request->file('image')->store('image', 'public');
         $existingUser = User::where('email', $request->email)->first();
+
+        $imagePath = Storage::disk('s3')->put('images', $request->image);
         if($existingUser){
             return redirect()->back()->with('error',  __('validation.addTenanTerror'));
         }else{
