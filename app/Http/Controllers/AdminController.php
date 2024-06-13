@@ -56,7 +56,7 @@ class AdminController extends Controller
     {
 
         $tenant = Tenant::where('user_id', $request->user_id)->first();
-        Storage::disk('public')->delete($tenant->image);
+        Storage::disk('s3')->delete($tenant->image);
         
         Tenant::where('user_id', $request->user_id)->delete();
         User::where('id', $request->user_id)->delete();
