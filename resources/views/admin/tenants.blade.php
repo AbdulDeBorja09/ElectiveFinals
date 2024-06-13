@@ -4,7 +4,7 @@
         <div class="dormitel-1">
         </div>
         <div class="tenants">
-            TENANTSss
+            TENANTS
         </div>
         @foreach ($tenants as $item)
             <div class="containers">
