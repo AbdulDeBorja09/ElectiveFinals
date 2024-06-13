@@ -166,7 +166,11 @@ class AdminController extends Controller
             $item->receiptdate = Carbon::parse($item->created_at)->format('F j, Y');
             $item->month = Carbon::createFromFormat('m', $item->month)->format('F');
         }
-        return view('admin.transaction', compact('bills', 'customer'));
+        if ($bills->isNotEmpty()) {
+            return view('admin.transaction', compact('bills', 'customer'));
+        } else {
+            return view('admin.transaction', compact('bills'));
+        }
     }
 
     public function Editbills($id){
