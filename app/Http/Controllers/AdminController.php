@@ -41,7 +41,7 @@ class AdminController extends Controller
         $tenant = Tenant::where('user_id', $request->user_id)->first();
         Storage::disk('public')->delete($tenant->image);
 
-        $imagePath = $request->file('image')->store('image', 'public');
+        $imagePath = Storage::disk('s3')->put('images', $request->file('image'));
         Tenant::where('user_id', $request->user_id)->update([
                 'name' => $request->name,
                 'age' => $request->age,
