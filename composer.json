@@ -2,10 +2,15 @@
     "name": "laravel/laravel",
     "type": "project",
     "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
+        "league/flysystem-aws-s3-v3": "^1.0",
+        "aws/aws-sdk-php": "^3.0",
         "a1comms/php-gds": "^4.2",
         "barryvdh/laravel-dompdf": "^2.2",
         "delfimov/gdimage": "^1.0",
