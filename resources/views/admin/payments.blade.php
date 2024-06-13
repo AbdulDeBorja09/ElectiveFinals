@@ -65,6 +65,13 @@
                                 required value="{{ $item->electricity }}">
                         </div>
                         <div class="col-lg-6 col-md-12 col-sm-12">
+                            <h3>TOTAL: </h3>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-12">
+                            <input class="form-control electricity" type="number" id="electricity" readonly required
+                                value="{{ $item->total }}">
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-12">
                             <h3>DUE DATE: </h3>
                         </div>
                         <div class="col-lg-6 col-md-12 col-sm-12">
@@ -92,37 +99,39 @@
                             </select>
                         </div>
                         <div class="col-lg-6 col-md-12 col-sm-12">
-                            <h3>TOTAL: </h3>
                         </div>
                         <div class="col-lg-6 col-md-12 col-sm-12 text-center submit">
                             <button class="btn" type="submit">SUBMIT</button>
                         </div>
-
-                        <div class="col-lg-6 col-md-12 col-sm-12">
-                            <h3>STATUS: </h3>
-                        </div>
-                        <div class="col-lg-3 col-md-12 col-sm-12 text-center status-btn">
-                            <form action="{{ route('admin.paid') }}" method="POST">
-                                @csrf
-                                @method('POST')
-                                <input type="hidden" name="id" value="{{ $item->id }}">
-                                <button class="btn " type="submit">PAID</button>
-                            </form>
-
-                        </div>
-                        <div class="col-lg-3 col-md-12 col-sm-12 text-center status-btn">
-
-                            <form action="{{ route('admin.pending') }}" method="POST">
-                                @csrf
-                                @method('POST')
-                                <input type="hidden" name="id" value="{{ $item->id }}">
-                                <button class="btn" type="submit">PENDING</button>
-                            </form>
-
-                        </div>
                     </div>
                 </div>
             </form>
+            <div class="add-bills" style="margin: -15px 165px 0px 165px ">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <h3>STATUS: </h3>
+                    </div>
+                    <div class="col-lg-3 col-md-12 col-sm-12 text-center status-btn">
+                        <form action="{{ route('admin.paid') }}" method="POST">
+                            @csrf
+                            @method('POST')
+                            <input type="hidden" name="id" value="{{ $item->id }}">
+                            <button class="btn" type="submit">PAID</button>
+                        </form>
+
+                    </div>
+                    <div class="col-lg-3 col-md-12 col-sm-12 text-center status-btn">
+
+                        <form action="{{ route('admin.pending') }}" method="POST">
+                            @csrf
+                            @method('POST')
+                            <input type="hidden" name="id" value="{{ $item->id }}">
+                            <button class="btn" type="submit">PENDING</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
         @endforeach
     </div>
 @endsection

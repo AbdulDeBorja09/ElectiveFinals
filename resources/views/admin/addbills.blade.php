@@ -81,7 +81,7 @@
                             </select>
                         </div>
                         <div class="col-lg-6 col-md-12 col-sm-12">
-                            <h3>TOTAL: </h3>
+
                         </div>
                         <div class="col-lg-6 col-md-12 col-sm-12 text-center submit">
                             <button class="btn" type="submit">SUBMIT</button>

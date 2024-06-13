@@ -203,12 +203,19 @@ class AdminController extends Controller
         ]);
         return redirect()->route('admin.transactions')->with('success', __('validation.addTenanTsucess'));
     }
-    public function pending(Request $request){
+    public function pending (Request $request){
         Bills::where('id', $request->id)->update([
             'status' => 'pending',
         ]);
-    return redirect()->route('admin.transactions')->with('success', __('validation.addTenanTsucess'));
+        return redirect()->route('admin.transactions')->with('success', __('validation.addTenanTsucess'));
     }
+    public function paid (Request $request){
+        Bills::where('id', $request->id)->update([
+            'status' => 'paid',
+        ]);
+        return redirect()->route('admin.transactions')->with('success', __('validation.addTenanTsucess'));
+    }
+
 
     public function deleteBills(Request $request)
     {

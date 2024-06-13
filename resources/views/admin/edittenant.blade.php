@@ -17,6 +17,7 @@
                 enctype="multipart/form-data">
                 @csrf
                 @method('POST')
+                <input type="hidden" name="user_id" value="{{ $item->user_id }}">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12">
                         <h1>Full Name:</h1>
