@@ -3,7 +3,8 @@
     @foreach ($profile as $item)
         <section class="section1">
             <div class="profile-img">
-                <img src="{{ Storage::disk('s3')->url($customer->image) }}" alt="Customer Image">
+                <img src="{{ Storage::url($customer->image) }}" alt="">
+
             </div>
             <div class="profile-info">
                 <p class="profile-name">{{ $item->name }}</p>

@@ -39,9 +39,9 @@ class AdminController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
         $tenant = Tenant::where('user_id', $request->user_id)->first();
-        Storage::disk('s3')->delete($tenant->image);
+        Storage::disk('public')->delete($tenant->image);
 
-        $imagePath = $request->file('image')->store('images', 's3');
+        $imagePath = $request->file('image')->store('images', 'public');
         Tenant::where('user_id', $request->user_id)->update([
             'name' => $request->name,
             'age' => $request->age,
@@ -56,7 +56,7 @@ class AdminController extends Controller
     {
 
         $tenant = Tenant::where('user_id', $request->user_id)->first();
-        Storage::disk('s3')->delete($tenant->image);
+        Storage::disk('public')->delete($tenant->image);
 
         Tenant::where('user_id', $request->user_id)->delete();
         User::where('id', $request->user_id)->delete();
@@ -77,7 +77,8 @@ class AdminController extends Controller
         ]);
         $existingUser = User::where('email', $request->email)->first();
 
-        $imagePath = $request->file('image')->store('images', 's3');
+
+        $imagePath = $request->file('image')->store('images', 'public');
         if ($existingUser) {
             return redirect()->back()->with('error',  __('validation.addTenanTerror'));
         } else {
@@ -131,15 +132,16 @@ class AdminController extends Controller
 
         $existingbill = Bills::where('month', $request->month)->where('user_id', $request->user_id)->latest('id')->first();
         if ($existingbill) {
-            Bills::where('month', $request->month)->where('user_id', $request->user_id)->update([
-                'rent' => $request->rent,
-                'water' => $request->water,
-                'internet' => $request->internet,
-                'electricity' => $request->electricity,
-                'total' => $request->rent + $request->water + $request->internet + $request->electricity,
-                'due' => $request->due,
-                'updated_at' => now(),
-            ]);
+            // Bills::where('month', $request->month)->where('user_id', $request->user_id)->update([
+            //     'rent' => $request->rent,
+            //     'water' => $request->water,
+            //     'internet' => $request->internet,
+            //     'electricity' => $request->electricity,
+            //     'total' => $request->rent + $request->water + $request->internet + $request->electricity,
+            //     'due' => $request->due,
+            //     'updated_at' => now(),
+            // ]);
+            return redirect()->back()->with('error',  __('validation.addTenanTerror'));
         } else {
             Bills::create([
                 'user_id' =>  $request->user_id,
