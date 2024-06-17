@@ -9,6 +9,7 @@ use App\Models\Tenant;
 use App\Models\Bills;
 use Carbon\Carbon;
 use Barryvdh\DomPDF\Facade\Pdf;
+
 class HomeController extends Controller
 {
     /**
@@ -54,9 +55,9 @@ class HomeController extends Controller
 
 
     public function transaction()
-    {   
+    {
         $id = Auth::id();
-        $bill = Bills::where('user_id', $id)->where('status', 'paid')->orderBy('month', 'desc')->get();
+        $bill = Bills::where('user_id', $id)->orderBy('id', 'desc')->get();
 
         foreach ($bill as $item) {
             $item->due = Carbon::parse($item->due)->format('F j, Y');
@@ -69,27 +70,27 @@ class HomeController extends Controller
     public function bill()
     {
         $id = Auth::id();
-        $month = date('m') ;
+        $month = date('m');
         $bill = Bills::where('user_id', $id)->where('month', $month)->where('status', 'pending')->get();
-        $customer = Tenant::where('user_id', $id )->first();
+        $customer = Tenant::where('user_id', $id)->first();
         foreach ($bill as $item) {
             $item->due = Carbon::parse($item->due)->format('F j, Y');
             $item->receiptdate = Carbon::parse($item->created_at)->format('F j, Y');
             $item->month = Carbon::createFromFormat('m', $item->month)->format('F');
         }
-        return view('user.bills', compact('bill','customer'));
+        return view('user.bills', compact('bill', 'customer'));
     }
     public function history($id)
-    {    
+    {
         $uid = Auth::id();
-        $customer = Tenant::where('user_id', $uid )->first();
-        $bill = Bills::where('id', $id)->where('status', 'paid')->get();
+        $customer = Tenant::where('user_id', $uid)->first();
+        $bill = Bills::where('id', $id)->get();
         foreach ($bill as $item) {
             $item->due = Carbon::parse($item->due)->format('F j, Y');
             $item->receiptdate = Carbon::parse($item->created_at)->format('F j, Y');
             $item->month = Carbon::createFromFormat('m', $item->month)->format('F');
-        }                          
-        return view('user.history',compact('bill','customer'));
+        }
+        return view('user.history', compact('bill', 'customer'));
     }
 
     public function generatePDF(Request $request)

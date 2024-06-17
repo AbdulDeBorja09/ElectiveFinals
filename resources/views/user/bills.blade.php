@@ -53,7 +53,7 @@
                     <p class="e">ELECTRICITY:</p>
                 </div>
                 <div class="amounts">
-                    <p class="a1">₱{{ $item->rent }}00</p>
+                    <p class="a1">₱{{ $item->rent }}.00</p>
                     <p class="a2">₱{{ $item->water }}.00</p>
                     <p class="a3">₱{{ $item->internet }}.00</p>
                     <p class="a4">₱{{ $item->electricity }}.00</p>
