@@ -17,13 +17,25 @@
                 <h1>Email:</h1>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12">
-                <input class="form-control" type="text" name="email" id="" required>
+                <input class="form-control  @error('email') is-invalid @enderror" type="text" name="email" id=""
+                    required value="{{ old('email') }}" autocomplete="email">
+                @error('email')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <h1>Password:</h1>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12">
-                <input class="form-control" type="text" name="password" id="" required>
+                <input class="form-control @error('password') is-invalid @enderror " type="text" name="password" id=""
+                    required autocomplete="new-password">
+                @error('password')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <h1>Age:</h1>
