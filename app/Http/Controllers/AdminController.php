@@ -80,7 +80,7 @@ class AdminController extends Controller
         if ($existingUser) {
             return redirect()->back()->with('error',  __('validation.tenantexist'));
         } else {
-            $apt = Tenant::where('unit', $request->unit)->get();
+            $apt = Tenant::where('unit', $request->unit)->first();
             $request->validate([
                 'name' => 'required|string|max:255',
                 'email' => 'required|string|unique:users,email',
@@ -90,10 +90,11 @@ class AdminController extends Controller
                 'since' => 'required|date',
                 'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]);
-            $imagePath = $request->file('image')->store('images', 'public');
+
             if ($apt) {
                 return redirect()->back()->with('error',  __('validation.tenantnumber'));
             } else {
+                $imagePath = $request->file('image')->store('images', 'public');
                 $newuser = User::create([
                     'name' => $request->name,
                     'email' => $request->email,
