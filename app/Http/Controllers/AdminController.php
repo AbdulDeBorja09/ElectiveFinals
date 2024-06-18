@@ -38,10 +38,6 @@ class AdminController extends Controller
             'since' => 'required|date',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-        $apt = Tenant::where('unit', $request->unit)->get();
-        if ($apt) {
-            return redirect()->back()->with('error',  __('validation.tenantnumber'));
-        }
 
         $tenant = Tenant::where('user_id', $request->user_id)->first();
         Storage::disk('public')->delete($tenant->image);
