@@ -13,6 +13,10 @@ return [
     |
     */
 
+
+    'billadded' => 'A bill has already been issued for this month.',
+    'tenantnumber' => 'Unit number already occupied by a tenant. Please enter a different unit number.',
+    'tenantexist' => 'This tenant already exist.',
     'accepted' => 'The :attribute must be accepted.',
     'accepted_if' => 'The :attribute must be accepted when :other is :value.',
     'active_url' => 'The :attribute is not a valid URL.',

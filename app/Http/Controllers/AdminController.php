@@ -38,6 +38,11 @@ class AdminController extends Controller
             'since' => 'required|date',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
+        $apt = Tenant::where('unit', $request->unit)->get();
+        if ($apt) {
+            return redirect()->back()->with('error',  __('validation.tenantnumber'));
+        }
+
         $tenant = Tenant::where('user_id', $request->user_id)->first();
         Storage::disk('public')->delete($tenant->image);
 
@@ -48,6 +53,10 @@ class AdminController extends Controller
             'unit' => $request->unit,
             'since' => $request->since,
             'image' => $imagePath,
+            'updated_at' => now(),
+        ]);
+        User::where('id', $request->user_id)->update([
+            'name' => $request->name,
             'updated_at' => now(),
         ]);
         return redirect()->route('admin.tenants')->with('success', __('validation.addTenanTsucess'));
@@ -66,40 +75,44 @@ class AdminController extends Controller
     }
     public function SubmitTenant(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|unique:users,email',
-            'password' => 'required|min:8',
-            'age' => 'required|string|max:255',
-            'unit' => 'required|string|max:255',
-            'since' => 'required|date',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
+
         $existingUser = User::where('email', $request->email)->first();
-
-
-        $imagePath = $request->file('image')->store('images', 'public');
         if ($existingUser) {
-            return redirect()->back()->with('error',  __('validation.addTenanTerror'));
+            return redirect()->back()->with('error',  __('validation.tenantexist'));
         } else {
-            $newuser = User::create([
-                'name' => $request->name,
-                'email' => $request->email,
-                'password' => Hash::make($request->password),
-                'created_at' => now(),
+            $apt = Tenant::where('unit', $request->unit)->get();
+            $request->validate([
+                'name' => 'required|string|max:255',
+                'email' => 'required|string|unique:users,email',
+                'password' => 'required|min:8',
+                'age' => 'required|string|max:255',
+                'unit' => 'required|string|max:255',
+                'since' => 'required|date',
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]);
+            $imagePath = $request->file('image')->store('images', 'public');
+            if ($apt) {
+                return redirect()->back()->with('error',  __('validation.tenantnumber'));
+            } else {
+                $newuser = User::create([
+                    'name' => $request->name,
+                    'email' => $request->email,
+                    'password' => Hash::make($request->password),
+                    'created_at' => now(),
+                ]);
 
-            Tenant::create([
-                'user_id' => $newuser->id,
-                'name' => $request->name,
-                'email' => $request->email,
-                'age' => $request->age,
-                'unit' => $request->unit,
-                'since' => $request->since,
-                'image' => $imagePath,
-                'created_at' => now(),
-            ]);
-            return redirect()->route('admin.home')->with('success', __('validation.addTenanTsucess'));
+                Tenant::create([
+                    'user_id' => $newuser->id,
+                    'name' => $request->name,
+                    'email' => $request->email,
+                    'age' => $request->age,
+                    'unit' => $request->unit,
+                    'since' => $request->since,
+                    'image' => $imagePath,
+                    'created_at' => now(),
+                ]);
+                return redirect()->route('admin.home')->with('success', __('validation.addTenanTsucess'));
+            }
         }
     }
     public function bills()
@@ -141,7 +154,7 @@ class AdminController extends Controller
             //     'due' => $request->due,
             //     'updated_at' => now(),
             // ]);
-            return redirect()->back()->with('error',  __('validation.addTenanTerror'));
+            return redirect()->back()->with('error',  __('validation.billadded'));
         } else {
             Bills::create([
                 'user_id' =>  $request->user_id,
@@ -155,8 +168,8 @@ class AdminController extends Controller
                 'due' => $request->due,
                 'created_at' => now(),
             ]);
+            return redirect()->route('admin.home')->with('success', __('validation.addTenanTsucess'));
         }
-        return redirect()->route('admin.home')->with('success', __('validation.addTenanTsucess'));
     }
     public function transactions()
     {

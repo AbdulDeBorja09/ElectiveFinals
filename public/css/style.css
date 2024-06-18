@@ -6,6 +6,10 @@
     font-family: "Inter", sans-serif;
     box-sizing: border-box;
 }
+body,
+html {
+    background-color: #ffffff;
+}
 .navbar {
     padding: 0px 100px;
 }
@@ -1103,4 +1107,28 @@
     padding: 50px 104px 67px 151px;
     width: 100%;
     box-sizing: border-box;
+}
+.error-alert {
+    background-color: rgba(141, 0, 0, 0.753);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+.no-bill-div {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+.no-bill-div img {
+    width: 600px;
+    opacity: 20%;
+}
+.no-bill-div h1 {
+    opacity: 100%;
+    color: #2c2c2c;
+    font-weight: 700;
+    z-index: 1;
+    font-size: 6rem;
+    margin-top: -380px;
 }

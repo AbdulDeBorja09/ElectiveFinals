@@ -71,13 +71,15 @@ class HomeController extends Controller
     {
         $id = Auth::id();
         $month = date('m');
-        $bill = Bills::where('user_id', $id)->where('month', $month)->where('status', 'pending')->get();
+        $bill = Bills::where('user_id', $id)->where('month', $month)->where('status', 'pending')->first();
         $customer = Tenant::where('user_id', $id)->first();
-        foreach ($bill as $item) {
-            $item->due = Carbon::parse($item->due)->format('F j, Y');
-            $item->receiptdate = Carbon::parse($item->created_at)->format('F j, Y');
-            $item->month = Carbon::createFromFormat('m', $item->month)->format('F');
+
+        if ($bill) {
+            $bill->due = Carbon::parse($bill->due)->format('F j, Y');
+            $bill->receiptdate = Carbon::parse($bill->created_at)->format('F j, Y');
+            $bill->month = Carbon::createFromFormat('m', $bill->month)->format('F');
         }
+
         return view('user.bills', compact('bill', 'customer'));
     }
     public function history($id)
