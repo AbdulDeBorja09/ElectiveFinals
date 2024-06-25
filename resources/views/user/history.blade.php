@@ -59,8 +59,9 @@
         </div>
     </div>
 
-    <div class="flexbox3-bills">
-
+    <div class="flexbox3-bills text-center">
+        <button class="text-center btn-dark mt-5 w-50" disabled
+            style="text-transform:uppercase;">{{$item->staus}}</button>
         <div class="amountbox">
             <p class="total">TOTAL:</p>
             <p class="a5">₱{{ $item->total }}.00</p>
